@@ -3,16 +3,16 @@
     "id": 1,
     "topic": "Azure Networking",
     "type": "ordering",
-    "scenario": "Your company is planning to deploy a new application...",
+    "scenario": "Your company is planning to deploy a new application in its Azure subscription...",
     "question": "Which four actions should you perform in sequence?",
     "options": [
-      "Create two subnets.",
       "Create a single virtual network (VNet).",
-      "Create a virtual network (VNet) for each layer.",
-      "Create a resource group.",
       "Enable service endpoints for the subnets.",
+      "Create three subnets.",
+      "Create a resource group.",
       "Configure peering on each virtual network (VNet).",
-      "Create three subnets."
+      "Create a virtual network (VNet) for each layer.",
+      "Create two subnets."
     ],
     "correctAnswer": [
       "Create a resource group.",
@@ -20,50 +20,41 @@
       "Create two subnets.",
       "Enable service endpoints for the subnets."
     ],
-    "explanation": "First, create a new resource group...",
+    "explanation": "To deploy a multi-tiered architecture with minimal administrative effort...",
     "wrongAnswers": [
       {
-        "option": "Create a virtual network (VNet) for each layer.",
-        "reason": "Creating a VNet for each layer would require more administrative effort."
+        "option": "Create three subnets.",
+        "reason": "Only two subnets are needed for the VM-based layers."
       }
     ],
-    "memoryTip": "Resource Group → VNet → 2 Subnets → Service Endpoints"
+    "memoryTip": "Use a single VNet with subnets for VM tiers and service endpoints for PaaS services."
   },
   {
     "id": 2,
     "topic": "Azure Identities and Governance",
     "type": "single-choice",
-    "scenario": "You have an Azure Active Directory tenant with 100 users...",
-    "question": "What should you configure to enforce MFA for administrative roles?",
+    "scenario": "You have an Azure Active Directory tenant containing 100 users. You need to ensure that administrative actions require Multi-Factor Authentication (MFA).",
+    "question": "Which service or feature should you use?",
     "options": [
-      "A. Azure Identity Protection",
-      "B. Conditional Access policy",
-      "C. Privileged Identity Management (PIM)",
-      "D. Azure Key Vault"
-    ],
-    "correctAnswer": ["B. Conditional Access policy"],
-    "explanation": "Conditional Access policies allow you to target specific user roles and require MFA...",
-    "wrongAnswers": [],
-    "memoryTip": "Access controls & MFA enforcement = Conditional Access"
-  },
-  {
-    "id": 3,
-    "topic": "Azure Storage",
-    "type": "multiple-choice",
-    "scenario": "You need to store diagnostic logs for 30 virtual machines...",
-    "question": "Which two storage account options support lifecycle management rules? (Select 2)",
-    "options": [
-      "A. Standard General Purpose v2",
-      "B. Premium Block Blobs",
-      "C. Page Blobs only",
-      "D. Blob Storage"
+      "Azure Key Vault",
+      "Conditional Access policy",
+      "Azure Identity Protection",
+      "Role-Based Access Control (RBAC)"
     ],
     "correctAnswer": [
-      "A. Standard General Purpose v2",
-      "B. Premium Block Blobs"
+      "Conditional Access policy"
     ],
-    "explanation": "Lifecycle management is supported on General Purpose v2 and Premium Block Blob accounts...",
-    "wrongAnswers": [],
-    "memoryTip": "Lifecycle rules work on GPv2 and Premium Block Blobs"
+    "explanation": "Conditional Access policies allow you to enforce requirements such as MFA based on user roles and sign-in risk.",
+    "wrongAnswers": [
+      {
+        "option": "Azure Key Vault",
+        "reason": "Key Vault is used for storing secrets, keys, and certificates, not for enforcing access rules or MFA."
+      },
+      {
+        "option": "Role-Based Access Control (RBAC)",
+        "reason": "RBAC defines what permissions users have, but it does not directly enforce MFA requirements."
+      }
+    ],
+    "memoryTip": "Enforcing MFA based on conditions = Conditional Access Policy"
   }
 ]

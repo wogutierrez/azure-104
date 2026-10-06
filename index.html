@@ -17,52 +17,52 @@
                 <p id="topic">Loading...</p>
             </div>
 
-            <div class="question-counter">
-                Question <span id="current-question">1</span>
-                of
-                <span id="total-questions">0</span>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <select id="type-filter" class="secondary-button" style="padding: 6px 10px; margin: 0;">
+                    <option value="all">All Types</option>
+                    <option value="ordering">Ordering</option>
+                    <option value="single-choice">Single Choice</option>
+                    <option value="multiple-choice">Multiple Choice</option>
+                </select>
+
+                <div class="question-counter">
+                    Question <span id="current-question">1</span>
+                    of
+                    <span id="total-questions">0</span>
+                </div>
             </div>
         </header>
 
         <main>
 
             <section class="question-section">
-
-                <div id="scenario" class="scenario"></div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div id="scenario" class="scenario"></div>
+                    <button id="bookmark-button" class="secondary-button" style="white-space: nowrap; margin-left: 15px;">
+                        🔖 Bookmark for Review
+                    </button>
+                </div>
 
                 <h2 id="question"></h2>
-
             </section>
 
             <div class="answer-grid">
 
                 <section>
-
                     <h3>Available Options</h3>
-
-                    <div id="options" class="options">
-                    </div>
-
+                    <div id="options" class="options"></div>
                 </section>
 
-                <section>
-
+                <section id="selected-answers-section">
                     <h3>Your Answer</h3>
-
                     <div id="selected-answers" class="selected-answers">
-
-                        <p id="empty-answer">
-                            Select answers in the order you want them.
-                        </p>
-
+                        <p id="empty-answer">Select answers in the order you want them.</p>
                     </div>
-
                 </section>
 
             </div>
 
             <div class="button-area">
-
                 <button id="reset-button" class="secondary-button">
                     Reset Answer
                 </button>
@@ -70,7 +70,6 @@
                 <button id="check-button" class="primary-button">
                     Check Answer
                 </button>
-
             </div>
 
             <section id="result-section" class="result-section hidden">
@@ -78,35 +77,23 @@
                 <div id="result-message"></div>
 
                 <div class="correct-answer-box">
-
                     <h3>Correct Answer</h3>
-
                     <ol id="correct-answer"></ol>
-
                 </div>
 
                 <div class="explanation-box">
-
                     <h3>Explanation</h3>
-
                     <p id="explanation"></p>
-
                 </div>
 
                 <div id="wrong-answers-section">
-
                     <h3>Why the other answers are wrong</h3>
-
                     <div id="wrong-answers"></div>
-
                 </div>
 
                 <div class="memory-tip">
-
                     <h3>Key Point to Remember</h3>
-
                     <p id="memory-tip"></p>
-
                 </div>
 
             </section>
@@ -124,6 +111,15 @@
             </div>
 
             <div class="navigation">
+                <button id="previous-button" class="secondary-button">Previous</button>
+                <button id="next-button" class="primary-button">Next</button>
+            </div>
 
-                <button id="previous-button" class="secondary-button">
-         
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
