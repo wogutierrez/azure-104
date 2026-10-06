@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZ-104 Practice Quiz</title>
+
+    style.css
+</head>
+
+<body>
+
+    <div class="quiz-container">
+
+        <header>
+            <div>
+                <h1>AZ-104 Practice Quiz</h1>
+                <p id="topic">Loading...</p>
+            </div>
+
+            <div class="question-counter">
+                Question <span id="current-question">1</span>
+                of
+                <span id="total-questions">0</span>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="question-section">
+
+                <div id="scenario" class="scenario"></div>
+
+                <h2 id="question"></h2>
+
+            </section>
+
+            <div class="answer-grid">
+
+                <section>
+
+                    <h3>Available Options</h3>
+
+                    <div id="options" class="options">
+                    </div>
+
+                </section>
+
+                <section>
+
+                    <h3>Your Answer</h3>
+
+                    <div id="selected-answers" class="selected-answers">
+
+                        <p id="empty-answer">
+                            Select answers in the order you want them.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <div class="button-area">
+
+                <button id="reset-button" class="secondary-button">
+                    Reset Answer
+                </button>
+
+                <button id="check-button" class="primary-button">
+                    Check Answer
+                </button>
+
+            </div>
+
+            <section id="result-section" class="result-section hidden">
+
+                <div id="result-message"></div>
+
+                <div class="correct-answer-box">
+
+                    <h3>Correct Answer</h3>
+
+                    <ol id="correct-answer"></ol>
+
+                </div>
+
+                <div class="explanation-box">
+
+                    <h3>Explanation</h3>
+
+                    <p id="explanation"></p>
+
+                </div>
+
+                <div id="wrong-answers-section">
+
+                    <h3>Why the other answers are wrong</h3>
+
+                    <div id="wrong-answers"></div>
+
+                </div>
+
+                <div class="memory-tip">
+
+                    <h3>Key Point to Remember</h3>
+
+                    <p id="memory-tip"></p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <div class="score">
+                Score:
+                <strong>
+                    <span id="score">0</span> /
+                    <span id="answered">0</span>
+                </strong>
+            </div>
+
+            <div class="navigation">
+
+                <button id="previous-button" class="secondary-button">
+         

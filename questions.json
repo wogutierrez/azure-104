@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "topic": "Azure Networking",
+        "type": "ordering",
+
+        "scenario": "Your company is planning to deploy a new application in its Azure subscription. You are asked to configure the required infrastructure for the new application. The new application must be deployed in a layered infrastructure consisting of front-end servers, back-end servers, and a database. The frontend and backend layers will use Azure virtual machines (VMs). The database layer will be deployed using Azure SQL Database. You need to ensure that you can apply security filtering on each layer independently. Your solution should require the minimum administrative effort.",
+
+        "question": "Which four actions should you perform in sequence?",
+
+        "options": [
+            "Create two subnets.",
+            "Create a single virtual network (VNet).",
+            "Create a virtual network (VNet) for each layer.",
+            "Create a resource group.",
+            "Enable service endpoints for the subnets.",
+            "Configure peering on each virtual network (VNet).",
+            "Create three subnets."
+        ],
+
+        "correctAnswer": [
+            "Create a resource group.",
+            "Create a single virtual network (VNet).",
+            "Create two subnets.",
+            "Enable service endpoints for the subnets."
+        ],
+
+        "explanation": "First, create a new resource group. Because you are deploying a whole new infrastructure for this application, you should create a new resource group and put all new resources in this resource group. Next, create a single VNet. This VNet will provide connectivity between the elements of the application. Next, create two subnets in the VNet: one subnet for the front-end layer and another for the back-end layer. A separate subnet is not required for the Azure SQL Database. Finally, enable service endpoints for the subnets within the VNet.",
+
+        "wrongAnswers": [
+            {
+                "option": "Create a virtual network (VNet) for each layer.",
+                "reason": "Creating a VNet for each layer would require more administrative effort. Each VNet would require at least one subnet, and multiple VNets would have to be managed. The database layer also does not need its own VNet because Azure SQL Database is being used."
+            },
+            {
+                "option": "Configure peering on each virtual network (VNet).",
+                "reason": "VNet peering is used to connect separate VNets. Because this solution uses a single VNet, there is no need to configure VNet peering."
+            },
+            {
+                "option": "Create three subnets.",
+                "reason": "Only two subnets are required: one for the front-end layer and one for the back-end layer. An additional subnet for the Azure SQL Database is not required in this design."
+            }
+        ],
+
+        "memoryTip": "Resource Group → VNet → 2 Subnets → Service Endpoints"
+    }
+]
